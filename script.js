@@ -33,9 +33,12 @@ function inicializarTema(botonTema, formulario, pagina) {
 }
 
 function cambiarTema(formulario, pagina, botonTema, bgClass, textClass, btnClass, textoBoton, icono) {
-  formulario.className = `formularioRegistro ${bgClass} ${textClass}`;
-  pagina.className = `pagina ${bgClass} ${textClass}`;
-  botonTema.className = `btn ${btnClass}`;
+  formulario.classList.remove("bg-light", "text-dark", "bg-dark", "text-white");
+  formulario.classList.add(bgClass, textClass);
+  pagina.classList.remove("bg-light", "text-dark", "bg-dark", "text-white");
+  pagina.classList.add(bgClass, textClass);
+  botonTema.classList.remove("btn-outline-secondary", "btn-outline-light");
+  botonTema.classList.add(btnClass);
   botonTema.innerHTML = `<i class="bi ${icono}"></i> ${textoBoton}`;
 }
 
